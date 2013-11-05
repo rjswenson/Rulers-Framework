@@ -17,4 +17,10 @@ class RulersAppTest < Test::Unit::TestCase
     body = last_response.body
     assert body["Hello"]
   end
+
+  def full_text
+    get "/"
+    body = last_response.body
+    assert body["Hello from Ruby on Rulers!"]
+  end
 end
