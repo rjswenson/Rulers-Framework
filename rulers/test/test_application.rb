@@ -15,12 +15,12 @@ class RulersAppTest < Test::Unit::TestCase
 
     assert last_response.ok?
     body = last_response.body
-    assert body["Hello"]
+    assert body["root"]
   end
 
   def full_text
     get "/"
     body = last_response.body
-    assert body["Hello from Ruby on Rulers!"]
+    assert body["A root page is not set yet"]
   end
 end
