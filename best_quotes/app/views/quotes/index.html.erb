@@ -1,0 +1,10 @@
+<h1> Here, have some quotes. </h1>
+<h3> Just don't get too excited, okay? </h3>
+
+<ul>
+  <% @quotes.each do |q| %>
+    <li> <strong><%= q["quote"] %></strong><br/>
+         By: <%= q["attribution"] %><br/><br/>
+    </li>
+  <% end %>
+</ul>
