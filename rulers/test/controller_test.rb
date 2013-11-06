@@ -2,7 +2,7 @@ require_relative "test_helper"
 
 class TestController < Rulers::Controller
   def index
-    "Hello, my name is Earl!" # Not rendering a view
+    "Hello!" # Not rendering a view
   end
 end
 
@@ -19,11 +19,11 @@ class RulersAppTest < Test::Unit::TestCase
     TestApp.new
   end
 
-def full_text_example
+  def test_request
     get "/example/route"
 
     assert last_response.ok?
     body = last_response.body
-    assert body["Hello, my name is Earl!"]
+    assert body["Hello"]
   end
 end
