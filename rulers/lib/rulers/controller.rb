@@ -16,9 +16,9 @@ module Rulers
       eruby = Erubis::Eruby.new(template)
 
       # pulls variables out of controller and into views.
-      instance_variables.each do |var|
-        eruby.instance_variable_set(var, instance_variable_get())
-      end
+      # instance_variables.each do |var|
+      #   eruby.instance_variable_set(var, instance_variable_get())
+      # end
 
       eruby.result locals.merge(:env => env)
     end

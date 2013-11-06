@@ -12,4 +12,4 @@ class QuotesController < Rulers::Controller
     quote_1 = Rulers::Model::FindModel.find(1)
     render :quote, :obj => quote_1
   end
- end
+end

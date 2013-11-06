@@ -26,6 +26,9 @@ module Rulers
         begin
           FileModel.new("db/quotes/#{id}.json")
         rescue
+          puts "==================="
+          puts "Model not found!"
+          puts "==================="
           return nil
         end
       end

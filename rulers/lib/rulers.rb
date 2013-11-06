@@ -8,7 +8,7 @@ require "rulers/file_model"
 module Rulers
   class Application
     def redirect_to(location)
-      [302, ["Location" => location], []]
+      [302, {"Location" => location}, []]
     end
 
     def call(env)
