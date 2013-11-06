@@ -4,6 +4,7 @@ module Rulers
   module Model
     class FileModel
       def initialize(filename)
+        puts "initializing the model"
         @filename = filename
 
         # Splits file num off and sets as @id

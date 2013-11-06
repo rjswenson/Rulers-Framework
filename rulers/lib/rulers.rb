@@ -20,12 +20,7 @@ module Rulers
 
       klass, act = get_controller_and_action(env)
       controller = klass.new(env)
-      begin
-        text = controller.send(act)
-      rescue
-        [501, {'Content-Type' => 'text/html'},
-              ["Nice try, sukka! Route not implemented."]]
-      end
+      text = controller.send(act)
 
       [200, {'Content-Type' => 'text/html'},
           [text]]
