@@ -14,8 +14,25 @@ class QuotesController < Rulers::Controller
     render :quote, :obj => m
   end
 
+  def show
+    @quote = FileModel.find(params["id"])
+    @ua = request.user_agent
+    render_response :quote, :obj => @quote
+  end
+
   def update
-    # TODO: Write an update POST method.
+    if env['REQUEST_METHOD'] == 'POST'
+      @quote = FileModel.find(params["id"])
+      attrs = {
+        "submitter" => "web user",
+        "quote" => "A picture is worth a thousand pixels",
+        "attribution" => "Jo-mama"
+      }
+      @quote.params = attrs
+      @quote.save
+    else
+      raise "Only updatable with POST requests!"
+    end
   end
 
   def a_quote
