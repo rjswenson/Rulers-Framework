@@ -5,13 +5,10 @@ require "rack/request"
 module Rulers
   class Controller
     include Rulers::Model
+    attr_reader :env
 
     def initialize(env)
       @env = env
-    end
-
-    def env
-      @env
     end
 
     def request
