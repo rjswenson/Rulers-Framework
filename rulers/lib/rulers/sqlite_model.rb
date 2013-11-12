@@ -34,7 +34,7 @@ module Rulers
         DB.execute <<-SQL
           UPDATE #{self.class.table}
           SET #{fields}
-          WHERE id = #{@hash["id"]}
+          WHERE id = #{@hash["id"]};
         SQL
         true
       end
