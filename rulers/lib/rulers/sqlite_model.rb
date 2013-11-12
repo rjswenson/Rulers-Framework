@@ -10,6 +10,14 @@ module Rulers
         @hash = data
       end
 
+      def method_missing(column_name)
+        # on demand method creation
+        self.class.send(:define_method, column_name) do
+          @hash[column_name.to_s]
+        end
+        send column_name
+      end
+
       def self.to_sql(val)
         case val
         when Numeric
